@@ -1,0 +1,166 @@
+<!DOCTYPE html> 
+
+<head>
+<meta charset="UTF-8">
+<title>Mission to Mars</title>
+<link rel="stylesheet" href= "https://bootswatch.com/4/spacelab/bootstrap.min.css">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">  
+<!-- To adjust views to other devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<style>
+h1 {
+    font-size: 50px;
+    text-align: center;
+    }
+
+.jumbotron {
+    padding: 1cm;
+}
+
+.pic1 {
+    width: 84%;
+    height: auto;
+    align-self: center;
+    margin-top: 1cm;
+    margin-bottom: 0.5cm;
+}
+
+.pic0 {
+    width: auto;
+    max-height: 15cm;
+    max-width: 18cm;
+}
+
+th {
+    font-size: 14px;
+}
+td {
+    font-size: 14px;
+}
+h4 {
+    font-weight: bold;
+}
+
+.p1{
+    font-weight: bold;
+    align-self: center;
+}
+
+</style>
+
+<body>
+<div class="container">
+<div class="jumbotron">
+    <h1>Mission to Mars</h1>
+    <div class="text-center">
+        <!-- <button type="button" class="btn btn-primary btn-lg" href="/scrape" role = 'button' >Scrape new data</button> -->
+        <a class="btn btn-warning" href="/scrape" role="button">Scrape New Data!</a>
+    </div>
+</div>
+    <!-- Mars news -->
+<h4>Latest Mars News</h4>
+    <h5>{{dictionary.news_title}}</h5>
+        <p>{{dictionary.news_paragraph}}</p>
+    <!-- Mars Images -->
+<div class="row">
+    <div class="col-md-8">
+        <div class="container">
+        <img class="pic0 mt-3" src = {{dictionary.featured_image_url}}>
+        </div>
+    </div>
+    <!-- Weather and Facts -->
+    <div class="col-md-4">
+        <a class="weather mt-3 mb-5">
+            <h5 class="mb-1">Current Weather on Mars</h5>
+        </a>
+        <p class="mb-1">{{dictionary.mars_weather}}</p>
+        
+    <!-- Mars Facts-->
+    <h5 class="mt-5">Mars Facts</h5>
+    <table border="1" p>
+            <thead>
+              <tr style="text-align: center;">
+                <th>Desctiption</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Equatorial Diameter:</th>
+                <td>6,792 km</td>
+              </tr>
+              <tr>
+                <th>Polar Diameter:</th>
+                <td>6,752 km</td>
+              </tr>
+              <tr>
+                <th>Mass:</th>
+                <td>6.42 x 10^23 kg (10.7% Earth)</td>
+              </tr>
+              <tr>
+                <th>Moons:</th>
+                <td>2 (Phobos &amp; Deimos)</td>
+              </tr>
+              <tr>
+                <th>Orbit Distance:</th>
+                <td>227,943,824 km (1.52 AU)</td>
+              </tr>
+              <tr>
+                <th>Orbit Period:</th>
+                <td>687 days (1.9 years)</td>
+              </tr>
+              <tr>
+                <th>Surface Temperature:</th>
+                <td>-153 to 20 °C</td>
+              </tr>
+              <tr>
+                <th>First Record:</th>
+                <td>2nd millennium BC</td>
+              </tr>
+              <tr>
+                <th>Recorded By:</th>
+                <td>Egyptian astronomers</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+    <!-- Hemispheres -->
+<hr class="my-4">
+<h4 center>Mars Hemispheres</h4>
+<div class="row">
+        <div class="col-md-6">
+            <div class="card border-light mb-3">
+            <img class="pic1" src = {{dictionary.hemispheres[0].img_url}}>
+                <div class='p1'>{{dictionary.hemispheres[0].title}}</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-light mb-3">
+            <img class="pic1" src = {{dictionary.hemispheres[1].img_url}}>
+                <div class='p1'>{{dictionary.hemispheres[1].title}}</div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card border-light mb-3">
+        <img class="pic1" src = {{dictionary.hemispheres[2].img_url}}>
+            <div class='p1'>{{dictionary.hemispheres[2].title}}</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-light mb-3">
+        <img class="pic1" src = {{dictionary.hemispheres[3].img_url}}>
+            <div class='p1'>{{dictionary.hemispheres[3].title}}</div>
+        </div>
+    </div>
+</div>
+        
+        
+</body>
+
